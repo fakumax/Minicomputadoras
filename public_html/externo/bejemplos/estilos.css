@@ -1,0 +1,39 @@
+/* Principal */
+* { margin:0;padding:0; }
+footer { background:#222222;color:white;padding-top:15px;padding-bottom:5px; }
+.jumbotron-vi { background:#428BCA;color:white;padding: 20px 0; }
+.jumbotron-g { background:#428BCA;color:white;margin-bottom:0;padding:10px; }
+.navbar { margin-bottom:0; }
+.breadcrumb { margin-bottom:0; }
+.banner { padding-top:120px;min-height:500px; }
+.carousel > .carousel-inner > .item > img { margin:0 auto; }
+.carousel > .item {	display:block;width:100%;height:400px; }
+.jumbotron-gs {
+	margin-bottom:0;
+	background:url(../img/bg01.jpg);
+	background-repeat:no-repeat;
+	background-size:cover; 
+	background-attachment: fixed;
+	height:250px;
+	color:#fff;
+	font-family:fantasy; }
+.bs  { color:white;text-shadow:5px 5px 5px #aaa; }
+.ns  { color:black;text-shadow:5px 5px 5px #aaa; }
+.f1  { font-family:fantasy }
+.f2  { font-family:cursive }
+.f3  { font-family:impact }
+.t3  { font-size:30px; }
+.t5  { font-size:50px; }
+.t4  { font-size:40px; }
+.t10 { font-size:100px; }
+.ir-arriba { display:none;padding:15px;background:#222222;font-size:15px;color:#fff;cursor:pointer;position:fixed;bottom:75px;right:5px; }
+/* Efecto Parallax */
+.parallax-window { background:transparent;min-height:400px; }
+.window-wrapper { background:white;padding-bottom:20px;padding-top:20px; }/*height: 800px;*/
+/* Estilo 1
+header { background:#2c3e50;color:#fff; }
+.main { background:#f2f2f2; }
+.color1 { background:#34495e;color:#fff; }
+aside { background:#c0392b;color:#fff; }
+footer { background:#16a085; color:#fff; }
+*/
