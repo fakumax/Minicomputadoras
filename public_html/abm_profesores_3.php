@@ -5,43 +5,49 @@ conectar();
 switch($_REQUEST['accion']) { 
 	case "Listado":
 		//$tbproducto = consulta("SELECT pk_prod, descripcion, tipo, IFNULL(preciocosto,0) AS preciocosto, IFNULL(precioventa,0) AS precioventa, iva, IFNULL(descuento,0) AS descuento, IFNULL(cantidad,0) AS cantidad, IFNULL(cantmin,0) AS cantmin, fk_medida FROM tbproducto");
-		$materia = consulta("SELECT id, nombre, descripcion, anio, clave FROM materia");
+		$profesor = consulta("SELECT id, dni, apellido, nombre, telefono, email, DATE(fecha_ing) as fecha_ing, clave, tipo FROM persona WHERE tipo = 'P'");
 		?>
 		<div class="table-responsive">
 		  <table class="table table-hover table-condensed text-center data-table">
 		    <thead>
 		      <tr>
 		        <th class="text-center">Id</th>
+		        <th class="text-center">DNI</th>
+		        <th class="text-center">Apellido</th>
 		        <th class="text-center">Nombre</th>
-		        <th class="text-center">Descripción</th>
-		        <th class="text-center">Año</th>
-		        <th class="text-center">Clave</th>
+		        <th class="text-center">Telefono</th>
+		        <th class="text-center">Email</th>
+		        <th class="text-center">Fecha Ingreso</th>
 		        <th class="text-center no-ordenar">Acciones</th>
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <?php while ($regg = traer_registro($materia)){
+		      <?php while ($regg = traer_registro($profesor)){
 		        $id = $regg['id'];
+		        $dni =$regg['dni'];
+		        $apellido =$regg['apellido'];
 		        $nombre =$regg['nombre'];
-		        $descripcion =$regg['descripcion'];
-		        //$anio =$regg['anio'];
-		        $clave =$regg['clave'];
-                    if ($regg['anio']==1) {$anio="Primero";}
-                elseif ($regg['anio']==2) {$anio="Segundo";}
-                elseif ($regg['anio']==3) {$anio="Tercero";}
+		        $telefono =$regg['telefono'];
+		        $email =$regg['email'];
+		        $fecha_ing =$regg['fecha_ing'];
+                    if ($regg['tipo']=='A') {$tipo="Administrador";}
+                elseif ($regg['tipo']=='P') {$tipo="Profesor";}
+                elseif ($regg['tipo']=='S') {$tipo="Alumno";}
 		        ?>
 		        <tr>
 		          <td><?php echo $id;?></td>
-		          <td id="nombre_materia<?php echo $id;?>"><?php echo $nombre;?></a></td>
-		          <td id="descripcion_materia<?php echo $id;?>"><?php echo $descripcion;?></a></td>
-		          <td id="anio_materia<?php echo $id;?>"><?php echo $anio;?></a></td>
-		          <td id="clave_materia<?php echo $id;?>"><?php echo $clave;?></a></td>
+		          <td id="dni_profesor<?php echo $id;?>"><?php echo $dni;?></a></td>
+		          <td id="apellido_profesor<?php echo $id;?>"><?php echo $apellido;?></a></td>
+		          <td id="nombre_profesor<?php echo $id;?>"><?php echo $nombre;?></a></td>
+		          <td id="telefono_profesor<?php echo $id;?>"><?php echo $telefono;?></a></td>
+		          <td id="email_profesor<?php echo $id;?>"><?php echo $email;?></a></td>
+		          <td id="fecha_ing_profesor<?php echo $id;?>"><?php echo $fecha_ing;?></a></td>
 		          <td>
 		          <span>
 		          <!--Botón Editar persona-->
-		          <a href="#" class="btn btn-default btn-sm" title="Editar materia" onclick="editar_materia('<?php echo $id;?>');" data-toggle="modal" data-target="#editarMateria"><i class="glyphicon glyphicon-edit"></i></a>
+		          <a href="#" class="btn btn-default btn-sm" title="Editar profesor" onclick="editar_profesor('<?php echo $id;?>');" data-toggle="modal" data-target="#editarProfesor"><i class="glyphicon glyphicon-edit"></i></a>
 		          <!--Botón Borrar persona-->
-		          <a href="#" class="btn btn-default btn-sm" title="Borrar materia" onclick="eliminar_materia('<?php echo $id;?>')"><i class="glyphicon glyphicon-trash"></i></a>
+		          <a href="#" class="btn btn-default btn-sm" title="Borrar profesor" onclick="eliminar_profesor('<?php echo $id;?>')"><i class="glyphicon glyphicon-trash"></i></a>
 		          </span>
 		          </td>
 		        </tr>

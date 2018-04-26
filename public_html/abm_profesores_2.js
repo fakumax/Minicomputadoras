@@ -1,14 +1,14 @@
 $(document).on('ready', inicio);
 
 function inicio(){
-	listadoMateria();
-	//altaMateria();
-	//editarMateria();
+	listadoProfesor();
+	//altaProfesor();
+	//editarProfesor();
 }
 
-function listadoMateria(){
+function listadoProfesor(){
 	$.ajax({
-		url: 'abm_materias_3.php?accion=Listado',
+		url: 'abm_profesores_3.php?accion=Listado',
 		beforeSend: cargando('resultado'),
 		success: function(response){
 			$('#resultado').html(response).fadeIn('slow');
@@ -17,7 +17,7 @@ function listadoMateria(){
 	});
 }
 
-function altaMateria(){
+function altaProfesor(){
 	$('#descripcion').on('blur', validarAltaProducto);
 	$('#cant_min').on('blur', validarAltaProducto);
 	$('#p_costo').on('blur', validarAltaProducto);
@@ -45,7 +45,7 @@ function validarAltaProducto(evento){
 		if ( ($('#tipo').val().trim() == 'O' || $('#tipo').val().trim() == 'A') && ( isNV('descripcion') || isNV('cant_min') || isNV('p_costo') || isNV('p_venta') || isNV('iva') || isNV('medida') ) ) { mostrarMensaje('mensaje', 'error'); formatoValidoAltaProducto = false; }
 		if (formatoValidoAltaProducto) {
 			$.ajax({
-				url: 'abm_materias_3.php',
+				url: 'abm_profesors_3.php',
 				data: $("#frm_altaproducto").serialize(),
 				type: 'post',
 				success: function(response){
@@ -82,7 +82,7 @@ function inicializarAltaProducto(){
 	$('#tipo').focus();
 }
 
-function editarMateria(){
+function editarProfesor(){
 	$('#mod_descripcion').on('blur', validarEditarProducto);
 	$('#mod_cant_min').on('blur', validarEditarProducto);
 	$('#mod_p_costo').on('blur', validarEditarProducto);
@@ -111,7 +111,7 @@ function validarEditarProducto(evento)
 		if ( ($('#mod_tipo').val().trim() == 'O' || $('#mod_tipo').val().trim() == 'A') && ( isNV('mod_descripcion') || isNV('mod_cant_min') || isNV('mod_p_costo') || isNV('mod_p_venta') || isNV('mod_iva') || isNV('mod_medida') || isNV('mod_descuento') ) ) { mostrarMensaje('mod_mensaje', 'error'); formatoValidoEditarProducto = false; }
 		if (formatoValidoEditarProducto) {
 			$.ajax({
-				url: 'abm_materias_3.php',
+				url: 'abm_profesors_3.php',
 				data: $("#frm_editarproducto").serialize(),
 				type: 'post',
 				success: function(response){
@@ -137,7 +137,7 @@ function inicializarEditarProducto(){
 	$('#mod_tipo').focus();
 }
 
-function editar_materia(id)
+function editar_profesor(id)
 {
 	$('#frm_editarproducto')[0].reset();
 
@@ -196,12 +196,12 @@ function editar_materia(id)
 	inicializarEditarProducto();
 }
 
-function eliminar_materia(id)
+function eliminar_profesor(id)
 {
 	console.log(id);
 	if (confirm('Realmente deseas eliminar el producto seleccionada'+' (id='+id+')')) {
 		$.ajax({
-			url: 'abm_materias_3.php',
+			url: 'abm_profesores_3.php',
 			data: {id:id, accion:'Baja'},
 			type: 'post',
 			success: function(response){
