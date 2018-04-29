@@ -4,8 +4,7 @@ conectar();
 
 switch($_REQUEST['accion']) { 
 	case "Listado":
-		//$tbproducto = consulta("SELECT pk_prod, descripcion, tipo, IFNULL(preciocosto,0) AS preciocosto, IFNULL(precioventa,0) AS precioventa, iva, IFNULL(descuento,0) AS descuento, IFNULL(cantidad,0) AS cantidad, IFNULL(cantmin,0) AS cantmin, fk_medida FROM tbproducto");
-		$profesor = consulta("SELECT id, dni, apellido, nombre, telefono, email, DATE(fecha_ing) as fecha_ing, clave, tipo FROM persona WHERE tipo = 'P'");
+		$profesor = consulta("SELECT id, dni, CONCAT(apellido, ', ', nombre) AS nombre, telefono, email, DATE(fecha_ing) as fecha_ing, clave, tipo FROM persona WHERE tipo = 'P'");
 		?>
 		<div class="table-responsive">
 		  <table class="table table-hover table-condensed text-center data-table">
@@ -13,8 +12,7 @@ switch($_REQUEST['accion']) {
 		      <tr>
 		        <th class="text-center">Id</th>
 		        <th class="text-center">DNI</th>
-		        <th class="text-center">Apellido</th>
-		        <th class="text-center">Nombre</th>
+		        <th class="text-center">Apellido y Nombre</th>
 		        <th class="text-center">Telefono</th>
 		        <th class="text-center">Email</th>
 		        <th class="text-center">Fecha Ingreso</th>
@@ -25,7 +23,6 @@ switch($_REQUEST['accion']) {
 		      <?php while ($regg = traer_registro($profesor)){
 		        $id = $regg['id'];
 		        $dni =$regg['dni'];
-		        $apellido =$regg['apellido'];
 		        $nombre =$regg['nombre'];
 		        $telefono =$regg['telefono'];
 		        $email =$regg['email'];
@@ -37,8 +34,7 @@ switch($_REQUEST['accion']) {
 		        <tr>
 		          <td><?php echo $id;?></td>
 		          <td id="dni_profesor<?php echo $id;?>"><?php echo $dni;?></a></td>
-		          <td id="apellido_profesor<?php echo $id;?>"><?php echo $apellido;?></a></td>
-		          <td id="nombre_profesor<?php echo $id;?>"><?php echo $nombre;?></a></td>
+		          <td id="nombre_profesor<?php echo $id;?>"><a href="relacion_profesor_materia.php?prof=<?php echo $id;?>"><?php echo $nombre;?></a></td>
 		          <td id="telefono_profesor<?php echo $id;?>"><?php echo $telefono;?></a></td>
 		          <td id="email_profesor<?php echo $id;?>"><?php echo $email;?></a></td>
 		          <td id="fecha_ing_profesor<?php echo $id;?>"><?php echo $fecha_ing;?></a></td>

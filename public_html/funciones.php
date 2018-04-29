@@ -9,7 +9,7 @@
 # traer_fila($tabla, $id, $igual, $campo = "") return $fila[$campo];
 
 // cn_local.php o cn_web.php
-require("cn/cn_web.php");
+require("cn/cn_local.php");
 
 //Esto se usa para el envío de un email
 ini_set('display_errors',1);
@@ -17,7 +17,6 @@ require("externo/PHPMailer/class.phpmailer.php");
 require("externo/PHPMailer/class.smtp.php");
 //https://www.google.com/settings/security/lesssecureapps
 //https://www.google.com/accounts/DisplayUnlockCaptcha
-
 
 function conectar()//return $cn;
 {

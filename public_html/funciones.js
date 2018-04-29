@@ -36,7 +36,7 @@ function Icono(campo,tipo = 'ok') {//Icono Error: Icono('nombre', 'error'); y de
 function mostrarMensaje(campo, tipo='success') {//Mensaje Ok: mostrarMensaje('nombre'); y de Error: mostrarMensaje('nombre', 'error');
 	var color, msg;
 	if (tipo=='success')
-		msg="<strong>¡Bien hecho!</strong> Los datos se grabaron correctamente.";
+		msg="<strong>¡Bien!</strong> Los datos se grabaron correctamente.";
 	else {
 		tipo='danger';
 		msg="<strong>¡Error!</strong> Los datos no se pudieron grabar, verifique los campos ingresados.";
@@ -59,19 +59,27 @@ function mostrarMensaje(campo, tipo='success') {//Mensaje Ok: mostrarMensaje('no
 	limpiarMensaje(campo);
 	document.getElementById(campo).appendChild(mensajeAux);
 }
-function mensaje(campo, mensaje, tipo='success') {//Mensaje Ok: mostrarMensaje('nombre'); y de Error: mostrarMensaje('nombre', 'error');
+function mostrarMensaje2(campo, mensaje, tipo='success') {//Mensaje Ok: mensaje('mensaje', 'Los datos se grabaron'); y de Error: mensaje('mensaje', 'Verifique los datos', 'error');
 	var color, msg;
 
 	if (tipo=='success')
-		msg="<strong>¡Aviso!</strong> "+mensaje+".";
+		msg="<strong>¡Bien!</strong> "+mensaje;
 	else {
-		msg="<strong>¡Error!</strong> "+mensaje+"."; tipo='danger';
+		msg="<strong>¡Error!</strong> "+mensaje; tipo='danger';
 	}
+
+	//<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	var cerrar = document.createElement("a");
+	cerrar.setAttribute('class', 'close');
+	cerrar.setAttribute('data-dismiss', 'alert');
+	cerrar.setAttribute('aria-label', 'close');
+	cerrar.innerHTML = "&times;";
 
 	//<div class="alert alert-success alert-dismissable fade in"></div>
 	var mensajeAux = document.createElement("div");
 	mensajeAux.setAttribute('class', 'alert alert-'+tipo+' alert-dismissable fade in');
 	mensajeAux.innerHTML = msg;
+	mensajeAux.appendChild(cerrar);
 
 	//Elimina el mensaje anterior y agrega el nuevo
 	limpiarMensaje(campo);
