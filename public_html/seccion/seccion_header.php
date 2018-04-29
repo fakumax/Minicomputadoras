@@ -44,7 +44,7 @@ switch ($_SESSION['perfil'])
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand"><?php echo $_SESSION['perfil'];?></a>
+        <a href="#" class="navbar-brand"><?php echo $_SESSION['nombre_completo'];?></a>
       </div>
       <div class="collapse navbar-collapse" id="navegacion-fm">
         <ul class="nav navbar-nav">
@@ -69,7 +69,7 @@ switch ($_SESSION['perfil'])
               <li><a href="#" onclick="//javascript:window.open('doc/manual/Manual_de_Usuario_Sistema_Pizeria_Yosuko.pdf','_blank');"><i class='glyphicon glyphicon-book'></i> Manual de Usuario</a></li>
             </ul>
           </li>
-          <li><a href="login2.php?accion=Desloguear"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+          <li><a href="login_3.php?accion=Desloguear"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
         </ul>
       </div>
     </div>
