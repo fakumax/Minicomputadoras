@@ -15,7 +15,6 @@ function validarLogin(){
 
 function validarAcceso(evento){
 	//var id = evento.target.id; //console.log('Id seleccionado: '+id);
-	var clave = $("#clave").val();
 	$.ajax({
 		url: 'login_3.php?accion=Ingresar',
 		data: $("#loginform").serialize(),
@@ -27,6 +26,7 @@ function validarAcceso(evento){
 			if (response=='cambiar_clave') {
 				limpiarCambiarClave();
 				$("#cambiarClave").modal();
+				$("#cambiar_id").val($("#clave").val());
 			}
 		}
 	});
@@ -63,7 +63,8 @@ function cambiarClave(){
 
 function validarCambiarClave(evento, enter=0)
 {
-	var id = evento.target.id; //console.log('Id seleccionado: '+id);
+	var id = evento.target.id;
+	console.log('Id seleccionado: '+id);
 	if (id == 'cambiar_clave' || id == 'cambiar_enviar') validarText('cambiar_clave');
 	if (id == 'cambiar_clave2' || id == 'cambiar_enviar') {
 		var campo = 'cambiar_clave2';
@@ -76,6 +77,7 @@ function validarCambiarClave(evento, enter=0)
 		var formatoValidoCambiarClave = true;
 		if ( ( isNV('cambiar_clave') || isNV('cambiar_clave2') ) ) { mostrarMensaje('mensaje_clave', 'error'); formatoValidoCambiarClave = false; }
 		if (formatoValidoCambiarClave) {
+			console.log($("#frm_cambiarclave").serialize());
 			$.ajax({
 				url: 'login_3.php?accion=Cambiar_Clave',
 				data: $("#frm_cambiarclave").serialize(),

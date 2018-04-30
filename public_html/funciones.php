@@ -9,7 +9,7 @@
 # traer_fila($tabla, $id, $igual, $campo = "") return $fila[$campo];
 
 // cn_local.php o cn_web.php
-require("cn/cn_local.php");
+require("cn/cn_web.php");
 
 //Esto se usa para el envío de un email
 ini_set('display_errors',1);
