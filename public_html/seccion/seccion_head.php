@@ -2,7 +2,7 @@
 <!--seccion_head.php -->
 <?php
 $titulo="Exámenes";
-$autor="Guillermo Sosa - Facundo Vergara - Daniel Romero - Marcelo Fernandez - Franco Alcaraz";
+$autor="Guillermo Sosa - Facundo Vergara - Daniel Romero - Marcelo Fernandez - Franco Alcaraz - Gustavo Faccendini";
 $descripcion="Sistema para tomar exámenes";
 $palabras_clave="sistema, exámenes";
 ?>

@@ -33,23 +33,26 @@ switch ($_SESSION['perfil'])
     $mis_cursos     = "none";
   break;
 }
+$institucion='Normal 10 "Anexo Comercial San Antonio"';
+$Nya=$_SESSION['nombre']." ".$_SESSION['apellido'];
 ?>
 <header>
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="background:#2d2d2d" >
+    <div class="container-fluid" >
+      <div class="navbar-header" style="background:#2d2d2d"  >
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm" >
           <span class="sr-only">Desplegar / Ocultar Menu</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand"><?php echo $_SESSION['perfil'];?></a>
+        <p class="navbar-text navbar-static-top "><?php echo $institucion;?></p>
+       
       </div>
-      <div class="collapse navbar-collapse" id="navegacion-fm">
-        <ul class="nav navbar-nav">
-          <li class="<?php if ($activo=="inicio") echo "active";?>"><a href="principal.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-          <li class="dropdown <?php if ($activo=="materias") echo "active";?>"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-book"></i> Materias<span class="caret"></span></a>
+      <div class="collapse navbar-collapse" id="navegacion-fm" style="background:#2c3e50">
+        <ul class="nav navbar-nav" >
+          <li class="<?php if ($activo=="inicio") ;?>"><a href="principal.php"><i class="glyphicon glyphicon-home" ></i> Inicio</a></li>
+          <li class="dropdown <?php if ($activo=="materias") echo "active";?>"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-book" style="padding-right:5px"></i>Buscar Materias<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li style="display:<?php echo $abm_materias;?>;"><a href="abm_materias.php"><span class="glyphicon glyphicon-book"></span> ABM Materias</a></li>
               <li style="display:<?php echo $matriculacion;?>;"><a href="matriculacion.php"><span class="glyphicon glyphicon-th-list"></span> Matriculación</a></li>
@@ -63,12 +66,10 @@ switch ($_SESSION['perfil'])
             </ul>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-envelope"></i> Soporte<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#" onclick="//javascript:window.open('doc/manual/Manual_de_Usuario_Sistema_Pizeria_Yosuko.pdf','_blank');"><i class='glyphicon glyphicon-book'></i> Manual de Usuario</a></li>
-            </ul>
-          </li>
+        <ul class="nav navbar-nav navbar-right" style="background:#2c3e50">
+
+          <p href="#" class="navbar-text navbar-static-top"><?php echo $_SESSION['perfil']." : ".$Nya;?></p>
+
           <li><a href="login2.php?accion=Desloguear"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
         </ul>
       </div>

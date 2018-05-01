@@ -6,6 +6,7 @@ switch($_REQUEST['accion']) {
 	case "Ingresar":
 		session_start();
 		$persona = consulta("SELECT * FROM persona WHERE dni='$_REQUEST[usuario]' OR email='$_REQUEST[usuario]'");
+		$nya=consulta("SELECT * FROM persona");
 		if ($reg = traer_registro($persona) and password_verify($_REQUEST['clave'], $reg['clave'])){
 			// Crea las variables de sesion
 		    $_SESSION['id'] = session_id();
@@ -14,9 +15,13 @@ switch($_REQUEST['accion']) {
 			if ($reg['tipo']=='A') $_SESSION['perfil'] = 'Administrador';
 			if ($reg['tipo']=='P') $_SESSION['perfil'] = 'Profesor';
 			if ($reg['tipo']=='S') $_SESSION['perfil'] = 'Alumno';
+			$_SESSION['nombre'] = $reg['nombre'];
+			$_SESSION['apellido'] =  $reg['apellido'];
 			$_SESSION['conectado'] = true;
 			$_SESSION['comienzo'] = time();
-			$_SESSION['expirar'] = $_SESSION['comienzo'] + (5 * 60);
+
+			$_SESSION['expirar'] = $_SESSION['comienzo'] + (5 * 3660);
+
 			// Agrega 5 hs al Administrador 
 			if ($_SESSION['perfil']=='Administrador') $_SESSION['expirar'] += (5 * 3600);
 			// Accede al menu principal
@@ -47,7 +52,7 @@ switch($_REQUEST['accion']) {
 			$fecha_ing = $fecha;
 			$clave_hash = password_hash($_REQUEST['dni'], PASSWORD_BCRYPT);
 			$tipo = 'S';
-
+			
 			$insertarRegistro = "INSERT INTO persona (dni, apellido, nombre, telefono, email, fecha_ing, clave, tipo) VALUES ($dni, '$apellido', '$nombre', '$telefono', '$email', '$fecha_ing', '$clave_hash', '$tipo')";
 
 			if (consulta($insertarRegistro) === TRUE) header("Location: index.php?msg=exito");

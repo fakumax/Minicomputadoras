@@ -1,6 +1,40 @@
 /* Principal */
 * { margin:0;padding:0; }
-footer { background:#222222;color:white;padding-top:15px;padding-bottom:5px; }
+
+.footer { 
+
+	background:#2c3e50;
+	color:white;
+	padding-top:15px;
+	padding-bottom:5px;
+	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	display:inline-block;
+  	padding-left:0px;
+
+ }
+ .footer p {
+ 	float: left;
+ }
+
+.footer li{ 
+ 	
+	float:right;
+	display: inline-block;
+ 	padding-right: 0px;
+ 	padding-left:20px;
+
+ }
+ .footer a{
+ 	text-decoration:none; 
+ 	color:white;
+ }
+ .footer a span{
+ 	padding-right: 5px;
+ }
+
+
 .jumbotron-vi { background:#428BCA;color:white;padding: 20px 0; }
 .jumbotron-g { background:#428BCA;color:white;margin-bottom:0;padding:10px; }
 .navbar { margin-bottom:0; }
