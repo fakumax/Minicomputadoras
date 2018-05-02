@@ -8,18 +8,15 @@
 <body>
   <?php include("seccion/seccion_header.php");?>
   <br>
-  <?php //include("modal/agregar_producto.php");?>
-  <?php //include("modal/editar_producto.php");?>
+  <?php include("modal/agregar_profesor.php");?>
+  <?php include("modal/editar_profesor.php");?>
 
   <div class="container">
     <div class="panel panel-info">
       <div class="panel-heading">
       <div class="pull-right">
-        <button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoProfesor"><span class="glyphicon glyphicon-plus" ></span> Nuevo Profesor</button>
+        <button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoProfesor" onclick="limpiarAltaProfesor();"><span class="glyphicon glyphicon-plus" ></span> Nuevo Profesor</button>
         <a href="relacion_profesor_materia.php" class="btn btn-info"><span class="glyphicon glyphicon-th-list"></span> Relacion Prof-Materia</a>
-<!--         <a href="stock.php" class="btn btn-info"><span class="glyphicon glyphicon-th"></span> Stock</a>
-        <a href="stock_detallado.php" class="btn btn-info"><span class="glyphicon glyphicon-tasks"></span> Stock Detallado</a>
-        <a href="pedido_de_insumos.php" class="btn btn-info"><span class="glyphicon glyphicon-list-alt"></span> Pedido de Insumos</a> -->
       </div>
       <h4>ABM Profesores</h4>
       </div>

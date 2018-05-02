@@ -18,7 +18,6 @@ require("externo/PHPMailer/class.smtp.php");
 //https://www.google.com/settings/security/lesssecureapps
 //https://www.google.com/accounts/DisplayUnlockCaptcha
 
-
 function conectar()//return $cn;
 {
 	global $tipo_cn, $cn, $server, $user, $pass, $db;

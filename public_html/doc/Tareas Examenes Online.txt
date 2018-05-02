@@ -1,0 +1,31 @@
+TAREAS - SISTEMA DE EXAMENES ONLINE
+
+
+==PANTALLAS====================================
+
+Administrador:
+-ABM de Profesores
+-ABM de Materias
+
+Profesores:
+-Matriculación por Materia
+-ABM de Unidades y Temas
+-ABM de Exámenes
+-ABM de Preguntas y Respuestas
+
+Alumnos:
+-Registración
+-Matriculación en Materias
+-Realizar Exámenes
+-Ver Notas o Exámenes
+
+
+==MODULOS DE PREGUNTAS==========================
+
+-Arrastrar y Soltar en Imagen de Fondo
+-Selección Multiple (Unica/Multiples Respuestas)
+-Completar (Escribir/Arrastrar Respuestas)
+-Unir
+-Verdadero/Falso (Unica/Multiples Respuestas)
+-Odernar
+

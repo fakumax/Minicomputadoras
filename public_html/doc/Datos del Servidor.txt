@@ -1,0 +1,18 @@
+Sitio: sistema-examen.000webhostapp.com
+-------------------------------------------------
+Panel: https://ar.000webhost.com/cpanel-login
+Usuario: sistema.examen@gmail.com
+Clave: Examen18
+-------------------------------------------------
+FTP Web: https://files.000webhost.com/
+FTP Host: files.000webhost.com
+FTP User: sistema-examen
+-------------------------------------------------
+PHP MyAdmin: https://databases.000webhost.com/
+PHP Usuario: id5504988_examen
+PHP Clave: Examen18
+ -------------------------------------------------
+DB Host: localhost
+DB Name: id5504988_examen
+DB User: id5504988_examen
+-------------------------------------------------

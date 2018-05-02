@@ -15,9 +15,12 @@
         <div class="modal-body">
 <!-- //Modal Parte1 -->
 
-        <form class="form-horizontal" role="form" accept-charset="UTF-8" action="login2.php?accion=Registrar" method="post" name="registroFrm">
+        <form class="form-horizontal" role="form" accept-charset="UTF-8" action="login2.php?accion=Registrar" method="post" name="registroFrm" id="registroFrm">
 
-          <!-- div_cuit_dni -->
+          <!-- //Mensajes -->
+          <div id="mensaje_registro"></div>
+
+          <!-- div_dni -->
           <div class="form-group" id="div_dni">
           <label class="col-md-3 control-label" for="dni">DNI(*):</label> 
           <div class="col-md-9">
@@ -62,7 +65,7 @@
           </div>
           </div>
 
-          <div class="form-group" id="div_ayuda">
+          <div class="form-group">
           <div class="col-md-12">
           <span class="help-block text-center">(*) Campos obligatorios</span>
           </div>
@@ -75,7 +78,7 @@
           <!-- btnLimpiar -->
           <input class="btn btn-danger" type="reset" name="limpiar" id="limpiar" value="Limpiar">
           <!-- btnEnviar -->
-          <input class="btn btn-primary" type="submit" name="enviar" id="enviar" value="Registrarse">
+          <input class="btn btn-primary" type="button" name="registrar" id="registrar" value="Registrarse">
           </div>
           </form>
         </div>

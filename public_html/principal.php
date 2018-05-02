@@ -7,6 +7,7 @@
 </head>
 <body>
   <?php include("seccion/seccion_header.php");?>
+  <?php include("seccion/seccion_body.php");?>
   <?php include("seccion/seccion_footer.php");?>
 </body>
 </html>

@@ -26,36 +26,26 @@ CREATE TABLE IF NOT EXISTS persona (
 
 INSERT INTO persona (id, dni, apellido, nombre, telefono, email, fecha_ing, clave, tipo) VALUES
 (1, 11111111, 'Administrador', 'Administrador', NULL, 'admin', '2017-11-07 13:13:21', '$2y$10$Gypsx4RtQhcw3Jr5EBiDX.5ilmxKzRDGbngdB9bJsx3B.i9.T0/Nu', 'A'),
-(2, 22222222, 'Rodriguez', 'Guillermo', NULL, 'profesor', '2017-11-07 13:13:21', '$2y$10$31nAJwWO7aoLx2Z7xiT6UOA0SdW7.TLPZIPhYGz5TdNm3QjywsSVK', 'P'),
+(2, 22222222, 'Profesor', 'Jirafales', NULL, 'profesor', '2017-11-07 13:13:21', '$2y$10$31nAJwWO7aoLx2Z7xiT6UOA0SdW7.TLPZIPhYGz5TdNm3QjywsSVK', 'P'),
 (3, 33333333, 'Perez', 'Juan', '3764333333', 'alumno@gmail.com', '2017-11-07 13:13:21', '$2y$10$wJX3IG01foLTUFS9b666VuOqxuo3zYqLVIVhKxqp2LvGRzxyNCOFm', 'S');
  
 CREATE TABLE IF NOT EXISTS materia (
 	id INT(5) NOT NULL AUTO_INCREMENT, 
 	nombre VARCHAR(50) NOT NULL, 
 	descripcion TEXT, 
-	anio INT(1) NOT NULL,
-	clave VARCHAR(20),
+	año INT(1) NOT NULL, 
 	PRIMARY KEY (id)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
-INSERT INTO materia (id, nombre, descripcion, anio, clave) VALUES
-(1, 'Matematica I', 'Comprende las operaciones con numeros naturales', 1, 'ferrari'),
-(2, 'Matematica 2', 'Comprende las operaciones con numeros enteros', 2, 'volkswagen');
-
 CREATE TABLE IF NOT EXISTS persona_materia (
-	id INT(5) NOT NULL AUTO_INCREMENT, 
-	persona_id INT(5) NOT NULL, 
+	persona_id INT(5) NOT NULL AUTO_INCREMENT, 
 	materia_id INT(5) NOT NULL, 
-	PRIMARY KEY (id), 
+	PRIMARY KEY (persona_id), 
 	FOREIGN KEY (persona_id) REFERENCES persona(id)
 	ON DELETE CASCADE ON UPDATE CASCADE, 
 	FOREIGN KEY (materia_id) REFERENCES materia(id)
 	ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
-
-INSERT INTO persona_materia (id, persona_id, materia_id) VALUES
-(1, 2, 1),
-(2, 2, 2);
 
 CREATE TABLE IF NOT EXISTS unidad (
 	id INT(5) NOT NULL AUTO_INCREMENT, 
@@ -126,10 +116,9 @@ CREATE TABLE IF NOT EXISTS examen (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS tema_examen (
-	id INT(5) NOT NULL AUTO_INCREMENT, 
-	tema_id INT(5) NOT NULL, 
+	tema_id INT(5) NOT NULL AUTO_INCREMENT, 
 	examen_id INT(5) NOT NULL, 
-	PRIMARY KEY (id), 
+	PRIMARY KEY (tema_id), 
 	FOREIGN KEY (tema_id) REFERENCES tema(id)
 	ON DELETE CASCADE ON UPDATE CASCADE, 
 	FOREIGN KEY (examen_id) REFERENCES examen(id)
@@ -171,3 +160,164 @@ CREATE TABLE IF NOT EXISTS etiq_elegida (
 	FOREIGN KEY (examen_tomado_id) REFERENCES examen_tomado(id)
 	ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

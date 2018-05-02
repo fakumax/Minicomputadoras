@@ -33,7 +33,7 @@ switch ($_SESSION['perfil'])
     $mis_cursos     = "none";
   break;
 }
-$institucion='Normal 10 "Anexo Comercial San Antonio"';
+$_SESSION['institucion']='Normal 10 "Anexo Comercial San Antonio"';
 $Nya=$_SESSION['nombre']." ".$_SESSION['apellido'];
 ?>
 <header>
@@ -46,7 +46,7 @@ $Nya=$_SESSION['nombre']." ".$_SESSION['apellido'];
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <p class="navbar-text navbar-static-top "><?php echo $institucion;?></p>
+        <p class="navbar-text navbar-static-top "><?php echo $_SESSION['institucion'];?></p>
        
       </div>
       <div class="collapse navbar-collapse" id="navegacion-fm" style="background:#2c3e50">
@@ -70,7 +70,7 @@ $Nya=$_SESSION['nombre']." ".$_SESSION['apellido'];
 
           <p href="#" class="navbar-text navbar-static-top"><?php echo $_SESSION['perfil']." : ".$Nya;?></p>
 
-          <li><a href="login2.php?accion=Desloguear"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+          <li><a href="login_3.php?accion=Desloguear"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
         </ul>
       </div>
     </div>
